@@ -37,6 +37,7 @@ header {
 .header__location {
     display: flex;
     flex-direction: column;
+    height: 33px;
     color: #232323;
     margin-right: 40px;
 }
@@ -47,10 +48,13 @@ header {
 }
 
 .header__location__city img {
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-bottom: 4px;
 }
 
 .header-search {
+    display: flex;
+    align-items: center;
     margin-right: 40px;
 }
 
@@ -71,7 +75,12 @@ header {
 }
 
 .header-profile {
+    height: 33px;
     margin-right: 40px;
+}
+
+.header-profile__account {
+    margin-bottom: 5px;
 }
 
 .header-language {
@@ -150,5 +159,5 @@ input:checked ~ .header-language__russian {
 }
 
 .header-cart__cart {
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
