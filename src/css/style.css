@@ -2,7 +2,15 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Roboto!';
+    src: local('Roboto');
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
 header {
+    font-family: 'Roboto!';
+    font-size: 12px;
     padding-left: 20px;
     background-color: #FFD700;
     height: 75px;
