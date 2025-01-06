@@ -142,6 +142,14 @@ nav {
     border-color: #232323;
 }
 
+li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.nav-container__buttons-list {
+    margin-bottom: 20px;
+}
+
 .nav-container__button {
     display: flex;
     align-items: center;
