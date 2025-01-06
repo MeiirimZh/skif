@@ -126,6 +126,43 @@ input[type="search"]:focus {
     background-color: #ffe34c;
 }
 
+nav {
+    width: 180px;
+    height: 227px;
+    padding-left: 40px;
+}
+
+.nav-container {
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 180px;
+    height: 227px;
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    border-color: #232323;
+}
+
+.nav-container__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 150px;
+    height: 32px;
+    background: white;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-container__button img {
+    margin-right: 10px;
+}
+
+.nav-container__button h2 {
+    text-align: left;
+    font-family: 'Roboto';
+    font-size: 14px;
+}
+
 @media (max-width: 1200px) {
     .header__catalogue {
         margin-right: 30px;
