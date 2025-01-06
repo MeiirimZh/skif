@@ -126,10 +126,15 @@ input[type="search"]:focus {
     background-color: #ffe34c;
 }
 
+.navmain {
+    display:flex;
+}
+
 nav {
     width: 180px;
     height: 227px;
     padding-left: 40px;
+    margin-right: 60px;
 }
 
 .nav-container {
@@ -169,6 +174,22 @@ li:not(:last-child) {
     text-align: left;
     font-family: 'Roboto';
     font-size: 14px;
+}
+
+main {
+    width: 1118px;
+    padding-top: 20px;
+}
+
+.main-products__card-header {
+    font-family: 'Roboto';
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.main-products__card-desc {
+    font-family: 'Roboto';
+    font-size: 12px;
 }
 
 @media (max-width: 1200px) {
