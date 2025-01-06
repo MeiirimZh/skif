@@ -189,7 +189,7 @@ li:not(:last-child) {
     }
 
     #header-search__input {
-        width: 368px;
+        width: 450px;
     }
 
     .header-profile {
@@ -223,7 +223,7 @@ li:not(:last-child) {
     }
 
     #header-search__input {
-        width: 268px;
+        width: 300px;
     }
 
     .header-profile {
@@ -284,6 +284,10 @@ li:not(:last-child) {
     }
 
     .header-cart {
+        display: none;
+    }
+
+    nav {
         display: none;
     }
 }
