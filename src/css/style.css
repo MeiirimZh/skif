@@ -64,7 +64,7 @@ input[type="search"]:focus {
 }
 
 #header-search__input {
-    width: 468px;
+    width: 626px;
     height: 34px;
     border: none;
     border-radius: 10px 0 0 10px;
@@ -86,61 +86,6 @@ input[type="search"]:focus {
 
 .header-profile__account {
     margin-bottom: 5px;
-}
-
-.header-language {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 40px;
-}
-
-.check-button {
-    background-color: #ffe34c;
-    width: 78px;
-    height: 28px;
-    border-radius: 14px;
-    cursor: pointer;
-    position: relative;
-}
-
-.check-button::before {
-    position: absolute;
-    content: '';
-    background-color: #232323;
-    width: 37px;
-    height: 21px;
-    border-radius: 14px;
-    margin: 4px;
-    transition: 0.2s;
-}
-
-#check {
-    display: none;
-}
-
-input:checked + .check-button::before {
-    transform: translateX(34px);
-}
-
-.header-language__kazakh {
-    position: absolute;
-    left: 10px;
-    color: white;
-}
-
-input:checked ~ .header-language__kazakh {
-    color: #232323;
-}
-
-.header-language__russian {
-    position: absolute;
-    left: 45px;
-}
-
-input:checked ~ .header-language__russian {
-    color: white;
 }
 
 .header-favourite {
