@@ -127,7 +127,7 @@ input[type="search"]:focus {
 }
 
 .navmain {
-    display:flex;
+    display: flex;
 }
 
 nav {
@@ -293,6 +293,10 @@ main {
     .header-favourite {
         margin-right: 20px;
     }
+
+    .main-products {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -322,6 +326,10 @@ main {
 
     .header-menu__button {
         display: block;
+    }
+
+    .main-products {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -367,7 +375,8 @@ main {
         width: 210px;
     }
 
-    .header-cart {
-        display: none;
+    .main-products {
+        padding-left: 50px;
+        grid-template-columns: 250px;
     }
 }

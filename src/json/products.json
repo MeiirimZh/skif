@@ -37,5 +37,13 @@
         "price": 15915,
         "category": "Clothing, shoes, accessories",
         "image": "img/products/00000005.png"
+    },
+
+    {
+        "id": "00000006",
+        "name": "Pacco Rosso Шарф мужской",
+        "price": 5990,
+        "category": "Clothing, shoes, accessories",
+        "image": "img/products/00000006.png"
     }
 ]
