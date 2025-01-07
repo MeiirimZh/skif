@@ -29,5 +29,13 @@
         "price": 8168,
         "category": "Supply",
         "image": "img/products/00000004.png"
+    },
+
+    {
+        "id": "00000005",
+        "name": "DexShell Шапка водонепроницаемая",
+        "price": 15915,
+        "category": "Clothing, shoes, accessories",
+        "image": "img/products/00000005.png"
     }
 ]
