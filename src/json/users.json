@@ -1,0 +1,11 @@
+{
+    "current_user": "guest",
+    "users": [
+        {
+            "name": "guest",
+            "password": null,
+            "cart": [],
+            "favourite": []
+        }
+    ]
+}

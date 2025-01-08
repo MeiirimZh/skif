@@ -1,3 +1,6 @@
+const main_products_cards = document.querySelectorAll(".main-products__card");
+const header_cart = document.querySelector(".header-cart");
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -6,7 +9,15 @@ function shuffleArray(array) {
     return array;
 }
 
-const main_products_cards = document.querySelectorAll(".main-products__card");
+fetch('./json/users.json')
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data["users"].length; i++) {
+            if (data["users"][i]["name"] == data["current_user"]) {
+                header_cart.querySelector(".header-cart__cart-quantity").textContent = data["users"][i]["cart"].length + " товаров"
+            }
+        }
+    });
 
 fetch('./json/products.json')
     .then(response => response.json())
