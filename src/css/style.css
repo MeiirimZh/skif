@@ -188,8 +188,10 @@ main {
 }
 
 .main-products__card {
+    position: relative;
     border: rgb(212, 212, 212) 1px solid;
     border-radius: 5px;
+    padding-bottom: 22px;
 }
 
 .main-products__card-image {
@@ -214,9 +216,9 @@ main {
 }
 
 .main-products__cart-button {
-    position: relative;
+    position: absolute;
     left: 5px;
-    bottom: 217px;
+    top: 5px;
     width: 60px;
     height: 20px;
     font-family: 'Roboto';
@@ -228,9 +230,9 @@ main {
 }
 
 .main-products__favourite-button {
-    position: relative;
-    bottom: 211px;
-    left: 150px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
     background: none;
     border: none;
     cursor: pointer;
