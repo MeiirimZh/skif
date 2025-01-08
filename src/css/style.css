@@ -187,10 +187,19 @@ main {
     gap: 40px;
 }
 
+.main-products__card {
+    border: rgb(212, 212, 212) 1px solid;
+    border-radius: 5px;
+}
+
 .main-products__card-image {
     width: 100%;
     height: 180px;
     object-fit: cover;
+}
+
+.main-products__card-text {
+    padding-left: 5px;
 }
 
 .main-products__card-price {
