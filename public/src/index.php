@@ -209,5 +209,12 @@
     <footer></footer>
 
     <script src="js/main.js"></script>
+
+    <?php
+        $data = "Hello from PHP!";
+
+        header('Content-Type: application/json');
+        echo json_encode(['message' => $data]);
+    ?>
 </body>
 </html>

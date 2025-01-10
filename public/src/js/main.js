@@ -2,22 +2,6 @@ let products = [];
 let cart_products = [];
 
 const main_products_cards = document.querySelectorAll(".main-products__card");
-const header_cart = document.querySelector(".header-cart");
-
-header_cart.querySelector(".header-cart__cart-quantity").textContent = cart_products.length + " товаров";
-
-main_products_cards.forEach((element, index) => {
-    let cartButton = element.querySelector(".main-products__cart-button");
-    cartButton.addEventListener("click", () => {
-        addProductToCart(index);
-    });
-});
-
-function addProductToCart(productIndex) {
-    cart_products.push(products[productIndex]["id"]);
-    header_cart.querySelector(".header-cart__cart-quantity").textContent = cart_products.length + " товаров";
-    console.log(cart_products);
-}
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
