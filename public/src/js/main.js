@@ -1,5 +1,23 @@
+let products = [];
+let cart_products = [];
+
 const main_products_cards = document.querySelectorAll(".main-products__card");
 const header_cart = document.querySelector(".header-cart");
+
+header_cart.querySelector(".header-cart__cart-quantity").textContent = cart_products.length + " товаров";
+
+main_products_cards.forEach((element, index) => {
+    let cartButton = element.querySelector(".main-products__cart-button");
+    cartButton.addEventListener("click", () => {
+        addProductToCart(index);
+    });
+});
+
+function addProductToCart(productIndex) {
+    cart_products.push(products[productIndex]["id"]);
+    header_cart.querySelector(".header-cart__cart-quantity").textContent = cart_products.length + " товаров";
+    console.log(cart_products);
+}
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -8,16 +26,6 @@ function shuffleArray(array) {
     }
     return array;
 }
-
-fetch('./json/users.json')
-    .then(response => response.json())
-    .then(data => {
-        for (let i = 0; i < data["users"].length; i++) {
-            if (data["users"][i]["name"] == data["current_user"]) {
-                header_cart.querySelector(".header-cart__cart-quantity").textContent = data["users"][i]["cart"].length + " товаров"
-            }
-        }
-    });
 
 fetch('./json/products.json')
     .then(response => response.json())
@@ -29,4 +37,6 @@ fetch('./json/products.json')
             element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
             element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
         });
+
+        products = jsonData;
     });

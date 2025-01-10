@@ -104,8 +104,17 @@ input[type="search"]:focus {
 }
 
 .header-cart {
+    background-color: #FFD700;
+    border: none;
     display: flex;
     gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.header-cart:hover {
+    border-radius: 10px;
+    background-color: #ffe34c;
 }
 
 .header-cart__cart {
