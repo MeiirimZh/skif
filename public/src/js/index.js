@@ -1,7 +1,9 @@
-let products = [];
-let cart_products = [];
+let products = document.querySelector(".header-cart__cart-quantity").getAttribute('data-attr');
+let cart_products = []; 
 
 const main_products_cards = document.querySelectorAll(".main-products__card");
+
+document.querySelector(".header-cart__cart-quantity").textContent = products;
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -11,7 +13,7 @@ function shuffleArray(array) {
     return array;
 }
 
-fetch('./json/products.json')
+fetch('../json/products.json')
     .then(response => response.json())
     .then(data => {
         let jsonData = shuffleArray(data);

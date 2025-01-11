@@ -1,3 +1,7 @@
+<?php
+        $a = 5;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +42,7 @@
             <img src="icons/Cart.png" alt="cart icon">
             <section>
                 <h2 class="header-cart__cart bold">Корзина</h2>
-                <h2 class="header-cart__cart-quantity">0 товаров</h2>
+                <h2 class="header-cart__cart-quantity" data-attr="<?=$a;?>">0 товаров</h2>
             </section>
         </button>
         <section class="header-menu">
@@ -208,13 +212,6 @@
 
     <footer></footer>
 
-    <script src="js/main.js"></script>
-
-    <?php
-        $data = "Hello from PHP!";
-
-        header('Content-Type: application/json');
-        echo json_encode(['message' => $data]);
-    ?>
+    <script src="js/index.js"></script>
 </body>
 </html>
