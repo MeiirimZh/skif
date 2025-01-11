@@ -1,9 +1,13 @@
-let products = document.querySelector(".header-cart__cart-quantity").getAttribute('data-attr');
-let cart_products = []; 
+let products = [];
+let cart_products = [];
 
 const main_products_cards = document.querySelectorAll(".main-products__card");
 
-document.querySelector(".header-cart__cart-quantity").textContent = products;
+// fetch('../json/users.json')
+//     .then(response => response.json())
+//     .then(data => {
+//         current_user = data.current_user;
+//     });
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -12,6 +16,42 @@ function shuffleArray(array) {
     }
     return array;
 }
+
+function updateCart() {
+    fetch('../json/users.json')
+        .then(response => response.json())
+        .then(data => {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                document.querySelector(".header-cart__cart-quantity").textContent = xhr.responseText;
+            };
+
+            xhr.open("POST", "../cart.php");
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.send(JSON.stringify(data));
+        })
+}
+
+// function updateCart() {
+//     fetch('../json/users.json')
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+
+//             return fetch("../cart.php", {
+//                 method: "POST",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify(data)
+//             });
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data)
+//         });
+// }
 
 fetch('../json/products.json')
     .then(response => response.json())

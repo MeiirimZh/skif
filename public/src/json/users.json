@@ -3,7 +3,11 @@
     "users": [
         {
             "name": "guest",
-            "password": null
+            "password": null,
+            "cart": [
+                1,
+                1
+            ]
         }
     ]
 }
