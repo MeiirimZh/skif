@@ -37,7 +37,7 @@ function updateCart(button) {
                 document.querySelector(".header-cart__cart-quantity").textContent = xhr.responseText;
             };
 
-            xhr.open("POST", "../cart.php");
+            xhr.open("POST", "../cart_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.setRequestHeader("Custom-X-Header", product_index);
             xhr.send(JSON.stringify(data));
