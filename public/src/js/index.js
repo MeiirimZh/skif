@@ -29,29 +29,10 @@ function updateCart() {
 
             xhr.open("POST", "../cart.php");
             xhr.setRequestHeader("Content-type", "application/json");
+            xhr.setRequestHeader("Custom-X-Header", );
             xhr.send(JSON.stringify(data));
         })
 }
-
-// function updateCart() {
-//     fetch('../json/users.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-
-//             return fetch("../cart.php", {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json"
-//                 },
-//                 body: JSON.stringify(data)
-//             });
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//         });
-// }
 
 fetch('../json/products.json')
     .then(response => response.json())
