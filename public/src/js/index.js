@@ -1,13 +1,20 @@
 let products = [];
+let page_products = [];
 let cart_products = [];
 
-const main_products_cards = document.querySelectorAll(".main-products__card");
+const products_cards = document.querySelectorAll(".main-products__card");
+let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 
-// fetch('../json/users.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         current_user = data.current_user;
-//     });
+// Update a cart quantity text
+fetch('../json/users.json')
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data['users'].length; i++) {
+            if (data['users'][i]['name'] == data['current_user']) {
+                document.querySelector('.header-cart__cart-quantity').textContent = data['users'][i]['cart'].length + " товаров";
+            }
+        }
+    })
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -17,7 +24,10 @@ function shuffleArray(array) {
     return array;
 }
 
-function updateCart() {
+function updateCart(button) {
+    let button_index = products_carts_btns.indexOf(button);
+    let product_index = products.indexOf(page_products[button_index]);
+
     fetch('../json/users.json')
         .then(response => response.json())
         .then(data => {
@@ -29,7 +39,7 @@ function updateCart() {
 
             xhr.open("POST", "../cart.php");
             xhr.setRequestHeader("Content-type", "application/json");
-            xhr.setRequestHeader("Custom-X-Header", );
+            xhr.setRequestHeader("Custom-X-Header", product_index);
             xhr.send(JSON.stringify(data));
         })
 }
@@ -37,13 +47,14 @@ function updateCart() {
 fetch('../json/products.json')
     .then(response => response.json())
     .then(data => {
-        let jsonData = shuffleArray(data);
+        products = [...data];
+        let jsonData = shuffleArray([...data]);
         
-        main_products_cards.forEach((element, index) => {
+        products_cards.forEach((element, index) => {
             element.querySelector('.main-products__card-image').src = jsonData[index]['image'];
             element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
             element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
         });
 
-        products = jsonData;
+        page_products = jsonData;
     });
