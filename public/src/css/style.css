@@ -247,11 +247,6 @@ main {
     cursor: pointer;
 }
 
-.main-title {
-    font-family: 'Roboto';
-    font-size: 24px;
-}
-
 @media (max-width: 1200px) {
     .header__catalogue {
         margin-right: 30px;
