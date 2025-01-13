@@ -247,6 +247,25 @@ main {
     cursor: pointer;
 }
 
+.main-products__remove-button {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 60px;
+    height: 20px;
+    font-family: 'Roboto';
+    font-size: 10px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main-empty-cart__text {
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
 @media (max-width: 1200px) {
     .header__catalogue {
         margin-right: 30px;

@@ -9,10 +9,14 @@
                     for ($i = 0; $i < count($users['users']); $i++) {
                         if ($users['users'][$i]['name'] == $users['current_user'])
                             $cart_quantity = count($users['users'][$i]['cart']);
-                    }
-
-                    for ($i = 0; $i < $cart_quantity; $i++) {
-                        require "blocks/product_card.html";
+                            if ($cart_quantity != 0) {
+                                for ($i = 0; $i < $cart_quantity; $i++) {
+                                    require "blocks/product_card.html";
+                                }
+                            }
+                            else {
+                                echo '<h2 class="main-empty-cart__text">Корзина пуста</h2>';
+                            }
                     }
                 ?>
             </div>

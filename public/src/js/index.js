@@ -54,6 +54,7 @@ fetch('../json/products.json')
             element.querySelector('.main-products__card-image').src = jsonData[index]['image'];
             element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
             element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
+            element.querySelector('.main-products__remove-button').style.display = 'none';
         });
 
         page_products = jsonData;

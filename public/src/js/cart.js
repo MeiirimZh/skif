@@ -2,6 +2,7 @@ let products = [];
 let product_ids = [];
 
 let products_cards = document.querySelectorAll(".main-products__card");
+let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 
 // Update a cart quantity text
 fetch('../json/users.json')
@@ -48,5 +49,25 @@ fetch('../json/products.json')
             element.querySelector('.main-products__card-image').src = products[index]['image'];
             element.querySelector('.main-products__card-price').textContent = products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
             element.querySelector('.main-products__card-name').textContent = products[index]['name'];
+            element.querySelector('.main-products__cart-button').style.display = 'none';
         });
     })  
+
+function removeProduct(button) {
+    let product_index = products_carts_btns.indexOf(button)
+
+    fetch('../json/users.json')
+        .then(response => response.json())
+        .then(data => {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                document.querySelector(".header-cart__cart-quantity").textContent = xhr.responseText;
+            };
+
+            xhr.open("POST", "../cart_manager.php");
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.setRequestHeader("Custom-X-Header", product_index);
+            xhr.send(JSON.stringify(data));
+        })
+}
