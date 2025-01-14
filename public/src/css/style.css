@@ -262,7 +262,7 @@ main {
     cursor: pointer;
 }
 
-.main-empty-cart__text {
+.main-empty-cart__text, .main-empty-favourites__text {
     font-family: 'Roboto';
     font-size: 20px;
 }

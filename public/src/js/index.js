@@ -4,6 +4,7 @@ let cart_products = [];
 
 const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
+let products_favourites_btns = Array.from(document.querySelectorAll(".main-products__favourite-button"));
 
 // Update a cart quantity text
 fetch('../json/users.json')
@@ -38,6 +39,26 @@ function updateCart(button) {
             };
 
             xhr.open("POST", "../cart_manager.php");
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${'add'}`);
+            xhr.send(JSON.stringify(data));
+        })
+}
+
+function updateFavourites(button) {
+    let button_index = products_favourites_btns.indexOf(button);
+    let product_index = products.indexOf(page_products[button_index]);
+
+    fetch('../json/users.json')
+        .then(response => response.json())
+        .then(data => {
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = function () {
+                console.log("Товар добавлен в понравившиеся");
+            };
+
+            xhr.open("POST", "../favourites_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${'add'}`);
             xhr.send(JSON.stringify(data));
