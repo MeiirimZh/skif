@@ -194,6 +194,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+    margin-bottom: 40px;
 }
 
 .main-products__card {
@@ -264,6 +265,28 @@ main {
 .main-empty-cart__text {
     font-family: 'Roboto';
     font-size: 20px;
+}
+
+.main__confirm_order {
+    margin-bottom: 20px;
+    width: 180px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.main__confirm_order:hover {
+    background-color: #ffe550;
+}
+
+.main__order-price {
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-size: 16px;
 }
 
 @media (max-width: 1200px) {

@@ -39,7 +39,7 @@ function updateCart(button) {
 
             xhr.open("POST", "../cart_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
-            xhr.setRequestHeader("Custom-X-Header", product_index);
+            xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${'add'}`);
             xhr.send(JSON.stringify(data));
         })
 }

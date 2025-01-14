@@ -4,12 +4,19 @@
     $users = json_decode($requestBody, true);
     $products = json_decode(file_get_contents('json/products.json'), true);
     $user_index;
-    $product_index = $_SERVER['HTTP_CUSTOM_X_HEADER'];
+    $product_index = explode(',', $_SERVER['HTTP_CUSTOM_X_HEADER'])[0];
+    $operation = explode(',', $_SERVER['HTTP_CUSTOM_X_HEADER'])[1];
 
     if ($users) {
         for ($i = 0; $i < count($users['users']); $i++) {
             if ($users['users'][$i]['name'] = $users['current_user']) {
-                $users['users'][$i]['cart'][] = $products[$product_index]["id"];
+                if ($operation == 'add') {
+                    $users['users'][$i]['cart'][] = $products[$product_index]["id"];
+                }
+                else {
+                    unset($users['users'][$i]['cart'][$product_index]);
+                    $users['users'][$i]['cart'] = array_values($users['users'][$i]['cart']);
+                }
                 $user_index = $i;
             }
         }

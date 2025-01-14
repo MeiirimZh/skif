@@ -20,6 +20,8 @@
                     }
                 ?>
             </div>
+            <h2 class="main__order-price bold"></h2>
+            <button class="main__confirm_order">Оформить заказ</button>
         </main>
     </div>
 
