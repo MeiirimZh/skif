@@ -5,10 +5,7 @@
             "name": "guest",
             "password": null,
             "cart": [],
-            "favourite": [
-                "00000012",
-                "00000008"
-            ]
+            "favourite": []
         }
     ]
 }

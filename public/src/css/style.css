@@ -304,6 +304,36 @@ main {
     font-size: 16px;
 }
 
+.user-enter-main {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+.user-enter-main form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.user-enter-main form input[type="password"] {
+    margin-bottom: 30px;
+}
+
+.user-enter-main form input[type="submit"] {
+    background-color: #FFD700;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.user-enter-main form input[type="submit"]:hover {
+    background-color: #ffe34c;
+}
+
 @media (max-width: 1200px) {
     .header__catalogue {
         margin-right: 30px;
