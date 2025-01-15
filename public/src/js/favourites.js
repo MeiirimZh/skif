@@ -1,9 +1,21 @@
 let products = [];
+let page_products = [];
 let product_ids = [];
 
 const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 let products_favourites_btns = Array.from(document.querySelectorAll(".main-products__favourite-button"));
+
+// Update a cart quantity text
+fetch('../json/users.json')
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data['users'].length; i++) {
+            if (data['users'][i]['name'] == data['current_user']) {
+                document.querySelector('.header-cart__cart-quantity').textContent = data['users'][i]['cart'].length + " товаров";
+            }
+        }
+    })
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -33,7 +45,14 @@ function updateFavourites(button) {
 }
 
 function updateCart(button) {
-    let product_index = products_favourites_btns.indexOf(button);
+    let button_index = products_carts_btns.indexOf(button);
+    let product_index;
+
+    for (let i = 0; i < products.length; i++) {
+        if (products[i]['id'] == page_products[button_index]['id']) {
+            product_index = i;
+        }
+    }
 
     fetch('../json/users.json')
         .then(response => response.json())
@@ -64,18 +83,20 @@ fetch('../json/users.json')
 fetch('../json/products.json')
     .then(response => response.json())
     .then(data => {
+        products = data;
+
         for (let i = 0; i < product_ids.length; i++) {
             for (let j = 0; j < data.length; j++) {
                 if (product_ids[i] == data[j]['id']) {
-                    products.push(data[j]);
+                    page_products.push(data[j]);
                 }
             }
         }
         
         products_cards.forEach((element, index) => {
-            element.querySelector('.main-products__card-image').src = products[index]['image'];
-            element.querySelector('.main-products__card-price').textContent = products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
-            element.querySelector('.main-products__card-name').textContent = products[index]['name'];
+            element.querySelector('.main-products__card-image').src = page_products[index]['image'];
+            element.querySelector('.main-products__card-price').textContent = page_products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
+            element.querySelector('.main-products__card-name').textContent = page_products[index]['name'];
             element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
             element.querySelector('.main-products__remove-button').style.display = 'none';
         });
