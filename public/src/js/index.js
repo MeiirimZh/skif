@@ -7,10 +7,18 @@ const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 let products_favourites_btns = Array.from(document.querySelectorAll(".main-products__favourite-button"));
 
-// Update a cart quantity text
+// Update a cart quantity text and current user
 fetch('../json/users.json')
     .then(response => response.json())
     .then(data => {
+        if (data['current_user'] != 'guest') {
+            for (let i = 0; i < data['users'].length; i++) {
+                if (data['users'][i]['name'] == data['current_user']) {
+                    document.querySelector(".header-profile__account").textContent = data['users'][i]['name'];
+                }
+            }
+        }
+
         for (let i = 0; i < data['users'].length; i++) {
             if (data['users'][i]['name'] == data['current_user']) {
                 document.querySelector('.header-cart__cart-quantity').textContent = data['users'][i]['cart'].length + " товаров";

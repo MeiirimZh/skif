@@ -12,6 +12,14 @@ let products_favourites_btns = Array.from(document.querySelectorAll(".main-produ
 fetch('../json/users.json')
     .then(response => response.json())
     .then(data => {
+        if (data['current_user'] != 'guest') {
+            for (let i = 0; i < data['users'].length; i++) {
+                if (data['users'][i]['name'] == data['current_user']) {
+                    document.querySelector(".header-profile__account").textContent = data['users'][i]['name'];
+                }
+            }
+        }
+
         for (let i = 0; i < data['users'].length; i++) {
             if (data['users'][i]['name'] == data['current_user']) {
                 document.querySelector('.header-cart__cart-quantity').textContent = data['users'][i]['cart'].length + " товаров";

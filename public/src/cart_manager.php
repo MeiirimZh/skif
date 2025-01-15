@@ -9,7 +9,7 @@
 
     if ($users) {
         for ($i = 0; $i < count($users['users']); $i++) {
-            if ($users['users'][$i]['name'] = $users['current_user']) {
+            if ($users['users'][$i]['name'] == $users['current_user']) {
                 if ($operation == 'add') {
                     $users['users'][$i]['cart'][] = $products[$product_index]["id"];
                 }

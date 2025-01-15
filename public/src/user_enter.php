@@ -51,7 +51,7 @@
     </header>
     
     <main class="user-enter-main">
-        <form action="" method="post">
+        <form action="managers/users_manager.php" method="post">
             <h1>Вход / Регистрация</h1>
             <h2>Имя пользователя</h2>
             <input type="text" name="username">

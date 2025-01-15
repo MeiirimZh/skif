@@ -7,7 +7,7 @@
                     $users = json_decode(file_get_contents('json/users.json'), true);
                     
                     for ($i = 0; $i < count($users['users']); $i++) {
-                        if ($users['users'][$i]['name'] == $users['current_user'])
+                        if ($users['users'][$i]['name'] == $users['current_user']) {
                             $cart_quantity = count($users['users'][$i]['cart']);
                             if ($cart_quantity != 0) {
                                 for ($i = 0; $i < $cart_quantity; $i++) {
@@ -17,6 +17,7 @@
                             else {
                                 echo '<h2 class="main-empty-cart__text">Корзина пуста</h2>';
                             }
+                        }
                     }
                 ?>
             </div>
