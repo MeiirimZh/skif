@@ -1,6 +1,7 @@
 let products = [];
 let page_products = [];
 let cart_products = [];
+let favourites = [];
 
 const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
@@ -52,18 +53,45 @@ function updateFavourites(button) {
     fetch('../json/users.json')
         .then(response => response.json())
         .then(data => {
+            let operation = 'add';
+
+            for (let i = 0; i < data['users'].length; i++) {
+                if (data['users'][i]['name'] == data['current_user']) {
+                    if (data['users'][i]['favourite'].includes(products[product_index]['id'])) {
+                        operation = 'remove';
+
+                        products_cards[button_index].querySelector(".main-products__favourite-button").querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small.png';
+                    }
+                    else {
+                        products_cards[button_index].querySelector(".main-products__favourite-button").querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
+                    }
+                }
+            }
+
             const xhr = new XMLHttpRequest();
 
             xhr.onload = function () {
-                console.log("Товар добавлен в понравившиеся");
+                console.log("Избранные изменены");
             };
 
             xhr.open("POST", "../favourites_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
-            xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${'add'}`);
+
+            xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${operation}`);
+
             xhr.send(JSON.stringify(data));
         })
 }
+
+fetch('../json/users.json')
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data['users'].length; i++) {
+            if (data['users'][i]['name'] == data['current_user']) {
+                favourites = data['users'][i]['favourite'];
+            }
+        }
+    })
 
 fetch('../json/products.json')
     .then(response => response.json())
@@ -76,6 +104,9 @@ fetch('../json/products.json')
             element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
             element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
             element.querySelector('.main-products__remove-button').style.display = 'none';
+            if (favourites.includes(jsonData[index]['id'])) {
+                element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
+            }
         });
 
         page_products = jsonData;
