@@ -26,10 +26,14 @@
             </button>
         </form>
         <section class="header-profile">
-            <button class="header-profile__button" onclick="window.location.href='user_enter.php'">
+            <button class="header-profile__button" onclick="profile_dropmenu()">
                 <h2 class="header-profile__account bold">Войти</h2>
                 <h2>Профиль</h2>
             </button>
+            <section class="header-profile-menu">
+                <button onclick="window.location.href='user_enter.php'"">Вход / регистрация</button>
+                <button onclick="user_exit()">Выйти из аккаунта</button>
+            </section>
         </section>
         <section class="header-favourite" onclick="window.location.href='favourites.php';">
             <button class="header-favourite__button">
@@ -61,4 +65,6 @@
         </form>
     </main>
 
+    <script src="js/user_enter.js"></script>
 </body>
+</html>

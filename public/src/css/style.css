@@ -80,8 +80,27 @@ input[type="search"]:focus {
 }
 
 .header-profile {
+    position: relative;
     height: 33px;
     margin-right: 40px;
+}
+
+.header-profile-menu {
+    position: absolute;
+    z-index: 1;
+}
+
+.header-profile-menu button {
+    background-color: #FFD700;
+    border: 1px solid #232323;
+    border-radius: 5px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.header-profile-menu button:hover {
+    background-color: #ffe34c;
 }
 
 .header-profile__button {
@@ -323,6 +342,7 @@ main {
 }
 
 .user-enter-main form input[type="submit"] {
+    margin-bottom: 100px;
     background-color: #FFD700;
     border: none;
     border-radius: 10px;
@@ -332,6 +352,19 @@ main {
 
 .user-enter-main form input[type="submit"]:hover {
     background-color: #ffe34c;
+}
+
+.user-enter-main__exit {
+    border: none;
+    background-color: #9E0016;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.user-enter-main__exit:hover {
+    background-color: #d41932;
 }
 
 @media (max-width: 1200px) {

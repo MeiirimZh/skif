@@ -6,6 +6,12 @@
             "password": null,
             "cart": [],
             "favourite": []
+        },
+        {
+            "name": "Meiirim",
+            "password": "123",
+            "cart": [],
+            "favourite": []
         }
     ]
 }
