@@ -22,6 +22,18 @@ fetch('../json/users.json')
         }
     })
 
+function header_logo_clicked() {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        window.location.href='index.php';
+    }
+
+    xhr.open("POST", "../managers/search_manager.php");
+    xhr.setRequestHeader("Custom-X-Header", "reset_search_query");
+    xhr.send();
+}
+
 document.querySelector(".header-profile-menu").style.display = 'none';
 
 function profile_dropmenu() {

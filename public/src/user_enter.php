@@ -11,7 +11,9 @@
 <body>
     <header>
         <a href="#"><img class="header__catalogue" src="icons/Catalogue.png" alt="catalogue icon"></a>
-        <a href="index.php"><img class="header__logo" src="img/Logo.png" alt="logo"></a>
+        <button class="header-logo" onclick="header_logo_clicked()">
+            <img class="header-logo__img" src="img/Logo.png" alt="logo">
+        </button>
         <section class="header-location">
             <section class="header-location__city">
                 <img src="icons/Location.png" alt="location icon">

@@ -93,6 +93,18 @@ function updateCart(button) {
         })
 }
 
+function header_logo_clicked() {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        window.location.href='index.php';
+    }
+
+    xhr.open("POST", "../managers/search_manager.php");
+    xhr.setRequestHeader("Custom-X-Header", "reset_search_query");
+    xhr.send();
+}
+
 function updateFavourites(button) {
     let button_index = products_favourites_btns.indexOf(button);
     let product_index = products.indexOf(page_products[button_index]);
@@ -179,7 +191,7 @@ fetch('../json/products.json')
                     element.querySelector('.main-products__card-price').textContent = current_products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
                     element.querySelector('.main-products__card-name').textContent = current_products[index]['name'];
                     element.querySelector('.main-products__remove-button').style.display = 'none';
-                    if (favourites.includes(jsonData[index]['id'])) {
+                    if (favourites.includes(current_products[index]['id'])) {
                         element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
                     }
                 }

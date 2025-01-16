@@ -30,8 +30,12 @@ header {
     margin-right: 40px;
 }
 
-.header__logo {
+.header-logo {
+    width: 64px;
     margin-right: 40px;
+    background-color: #FFD700;
+    border: none;
+    cursor: pointer;
 }
 
 .header-location {
@@ -372,7 +376,7 @@ main {
         margin-right: 30px;
     }
 
-    .header__logo {
+    .header-logo__img {
         margin-right: 30px;
     }
 
@@ -406,7 +410,7 @@ main {
         margin-right: 20px;
     }
 
-    .header__logo {
+    .header-logo__img {
         margin-right: 20px;
     }
 
@@ -478,7 +482,7 @@ main {
         display: none;
     }
 
-    .header__logo {
+    .header-logo__img {
         width: 45px;
         height: 27px;
     }
@@ -501,7 +505,7 @@ main {
         display: none;
     }
 
-    .header__logo {
+    .header-logo__img {
         margin-right: 10px;
         width: 30px;
         height: 18px;

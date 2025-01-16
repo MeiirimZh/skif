@@ -43,6 +43,18 @@ function profile_dropmenu() {
     }
 }
 
+function header_logo_clicked() {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        window.location.href='index.php';
+    }
+
+    xhr.open("POST", "../managers/search_manager.php");
+    xhr.setRequestHeader("Custom-X-Header", "reset_search_query");
+    xhr.send();
+}
+
 function user_exit() {
     const xhr = new XMLHttpRequest();
 
