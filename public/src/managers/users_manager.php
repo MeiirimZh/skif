@@ -35,7 +35,9 @@
         header("../index.php");
     }
     else {
-        $json['current_user'] = $username;
+        if ($user_found) {
+            $json['current_user'] = $username;
+        }
 
         $json = json_encode($json, JSON_PRETTY_PRINT);
         file_put_contents('../json/users.json', $json);

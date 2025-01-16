@@ -3,9 +3,21 @@ let page_products = [];
 let cart_products = [];
 let favourites = [];
 
+let search_query;
+
 const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 let products_favourites_btns = Array.from(document.querySelectorAll(".main-products__favourite-button"));
+
+// Check for a search query
+fetch('../json/search_query.json')
+    .then(response => response.json())
+    .then(data => {
+        if (data.length != 0) {
+            search_query = data;
+            document.getElementById("header-search__input").value = search_query;
+        }
+    })
 
 // Update a cart quantity text and current user
 fetch('../json/users.json')
@@ -133,16 +145,60 @@ fetch('../json/products.json')
     .then(data => {
         products = [...data];
         let jsonData = shuffleArray([...data]);
-        
-        products_cards.forEach((element, index) => {
-            element.querySelector('.main-products__card-image').src = jsonData[index]['image'];
-            element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
-            element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
-            element.querySelector('.main-products__remove-button').style.display = 'none';
-            if (favourites.includes(jsonData[index]['id'])) {
-                element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
+
+        let current_products = [];
+
+        if (search_query) {
+            for (let i = 0; i < jsonData.length; i++) {
+                // Go through words in products's name
+                for (const product_word of jsonData[i]['name'].split(" ")) {
+                    // Go through words in search query
+                    for (const search_word of search_query) {
+                        if (product_word.toLowerCase() == search_word.toLowerCase()) {
+                            current_products.push(jsonData[i]);
+                        }
+                    }
+                }
             }
-        });
+        }
+
+        // Remove duplicate products
+        for (let i = 0; i < current_products.length-1; i++) {
+            for (let j = i+1; j < current_products.length; j++) {
+                if (current_products[i]['id'] == current_products[j]['id']) {
+                    current_products.splice(j, 1);
+                    j--;
+                }
+            }
+        }
+
+        if (search_query != "") {
+            products_cards.forEach((element, index) => {
+                if (current_products[index] != undefined) {
+                    element.querySelector('.main-products__card-image').src = current_products[index]['image'];
+                    element.querySelector('.main-products__card-price').textContent = current_products[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
+                    element.querySelector('.main-products__card-name').textContent = current_products[index]['name'];
+                    element.querySelector('.main-products__remove-button').style.display = 'none';
+                    if (favourites.includes(jsonData[index]['id'])) {
+                        element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
+                    }
+                }
+                else {
+                    element.style.display = 'none';
+                }
+            });
+        }
+        else {
+            products_cards.forEach((element, index) => {
+                element.querySelector('.main-products__card-image').src = jsonData[index]['image'];
+                element.querySelector('.main-products__card-price').textContent = jsonData[index]['price'].toLocaleString('en-US').replace(/,/g, ' ') + ' ₸';
+                element.querySelector('.main-products__card-name').textContent = jsonData[index]['name'];
+                element.querySelector('.main-products__remove-button').style.display = 'none';
+                if (favourites.includes(jsonData[index]['id'])) {
+                    element.querySelector('.main-products__favourite-button').querySelector(".main-products__favourite-button-img").src = '../icons/Favourite-Small-Filled.png';
+                }
+            });
+        }
 
         page_products = jsonData;
     });
