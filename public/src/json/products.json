@@ -3,7 +3,7 @@
         "id": "00000001",
         "name": "Компас",
         "price": 890,
-        "category": "Navigation and safety",
+        "category": "navigation-and-safety",
         "image": "img/products/00000001.png"
     },
 
@@ -11,7 +11,7 @@
         "id": "00000002",
         "name": "Куртка мужская ветрозащитная водонепроницаемая",
         "price": 14990,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000002.png"
     },
 
@@ -19,7 +19,7 @@
         "id": "00000003",
         "name": "Маленький рюкзак Swissgear 1419A",
         "price": 15765,
-        "category": "Gear",
+        "category": "gear",
         "image": "img/products/00000003.png"
     },
 
@@ -27,7 +27,7 @@
         "id": "00000004",
         "name": "Laima Термос классический",
         "price": 8168,
-        "category": "Supply",
+        "category": "supply",
         "image": "img/products/00000004.png"
     },
 
@@ -35,7 +35,7 @@
         "id": "00000005",
         "name": "DexShell Шапка водонепроницаемая",
         "price": 15915,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000005.png"
     },
 
@@ -43,7 +43,7 @@
         "id": "00000006",
         "name": "Pacco Rosso Шарф мужской",
         "price": 5990,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000006.png"
     },
 
@@ -51,7 +51,7 @@
         "id": "00000007",
         "name": "MINAKU Перчатки женские",
         "price": 2243,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000007.png"
     },
 
@@ -59,7 +59,7 @@
         "id": "00000008",
         "name": "Mattini Ботинки мужские",
         "price": 54990,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000008.png"
     },
 
@@ -67,7 +67,7 @@
         "id": "00000009",
         "name": "Norfin Куртка зимняя женская «Nordic»",
         "price": 41560,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000009.png"
     },
 
@@ -75,7 +75,7 @@
         "id": "00000010",
         "name": "Fight Empire Штаны компрессионные мужские",
         "price": 12176,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000010.png"
     },
 
@@ -83,7 +83,7 @@
         "id": "00000011",
         "name": "Tendance Ботинки женские",
         "price": 48964,
-        "category": "Clothing, shoes, accessories",
+        "category": "clothing-shoes-accessories",
         "image": "img/products/00000011.png"
     },
 
@@ -91,7 +91,7 @@
         "id": "00000012",
         "name": "Cycplus Велокомпьютер GPS беспроводной",
         "price": 19990,
-        "category": "Gear",
+        "category": "gear",
         "image": "img/products/00000012.png"
     }
 ]
