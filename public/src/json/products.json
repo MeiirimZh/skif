@@ -93,5 +93,89 @@
         "price": 19990,
         "category": "gear",
         "image": "img/products/00000012.png"
+    },
+    {
+        "id": "00000013",
+        "name": "Stern Фонарик светодиодный",
+        "price": 1329,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000013.png"
+    },
+    {
+        "id": "00000014",
+        "name": "Набор бинтов марлевых медицинских нестерильных",
+        "price": 2420,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000014.png"
+    },
+    {
+        "id": "00000015",
+        "name": "Skyway Аптечка автомобильная",
+        "price": 2146,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000015.png"
+    },
+    {
+        "id": "00000016",
+        "name": "Компас \"Камуфляж\"",
+        "price": 3192,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000016.png"
+    },
+    {
+        "id": "00000017",
+        "name": "Набор первой медицинской помощи",
+        "price": 7770,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000017.png"
+    },
+    {
+        "id": "00000018",
+        "name": "Гель для рук антимикробный",
+        "price": 120,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000018.png"
+    },
+    {
+        "id": "00000019",
+        "name": "TKSTAR GPS-трекер TK915",
+        "price": 23000,
+        "category": "navigation-and-safety",
+        "image": "img/products/00000019.png"
+    },
+    {
+        "id": "00000020",
+        "name": "Паштет \"Печень говяжья\"",
+        "price": 740,
+        "category": "supply",
+        "image": "img/products/00000020.png"
+    },
+    {
+        "id": "00000021",
+        "name": "FitnesShock Батончик «Фундук»",
+        "price": 496,
+        "category": "supply",
+        "image": "img/products/00000021.png"
+    },
+    {
+        "id": "00000022",
+        "name": "Pikki Батончик фруктовый «Банан»",
+        "price": 472,
+        "category": "supply",
+        "image": "img/products/00000022.png"
+    },
+    {
+        "id": "00000023",
+        "name": "Корона Миндаль",
+        "price": 1512,
+        "category": "supply",
+        "image": "img/products/00000023.png"
+    },
+    {
+        "id": "00000024",
+        "name": "Корона Финики \"Иран\"",
+        "price": 535,
+        "category": "supply",
+        "image": "img/products/00000024.png"
     }
 ]
