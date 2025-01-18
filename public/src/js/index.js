@@ -86,7 +86,7 @@ function updateCart(button) {
                 document.querySelector(".header-cart__cart-quantity").textContent = xhr.responseText;
             };
 
-            xhr.open("POST", "../cart_manager.php");
+            xhr.open("POST", "../managers/cart_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
             xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${'add'}`);
             xhr.send(JSON.stringify(data));
@@ -133,7 +133,7 @@ function updateFavourites(button) {
                 console.log("Избранные изменены");
             };
 
-            xhr.open("POST", "../favourites_manager.php");
+            xhr.open("POST", "../managers/favourites_manager.php");
             xhr.setRequestHeader("Content-type", "application/json");
 
             xhr.setRequestHeader("Custom-X-Header", `${String(product_index)},${operation}`);
