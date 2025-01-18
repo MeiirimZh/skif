@@ -177,5 +177,61 @@
         "price": 535,
         "category": "supply",
         "image": "img/products/00000024.png"
+    },
+    {
+        "id": "00000025",
+        "name": "Ardesto Термокружка",
+        "price": 4792,
+        "category": "supply",
+        "image": "img/products/00000025.png"
+    },
+    {
+        "id": "00000026",
+        "name": "Штурвал Шпроты в масле",
+        "price": 1578,
+        "category": "supply",
+        "image": "img/products/00000026.png"
+    },
+    {
+        "id": "00000027",
+        "name": "DANIMANS Рюкзак полиэстер",
+        "price": 7900,
+        "category": "gear",
+        "image": "img/products/00000027.png"
+    },
+    {
+        "id": "00000028",
+        "name": "High Peak Спальный мешок \"Trek\"",
+        "price": 24000,
+        "category": "gear",
+        "image": "img/products/00000028.png"
+    },
+    {
+        "id": "00000029",
+        "name": "Mona Liza Подушка",
+        "price": 1282,
+        "category": "gear",
+        "image": "img/products/00000029.png"
+    },
+    {
+        "id": "00000030",
+        "name": "Bestway Палатка «Cool Dome 3»",
+        "price": 15029,
+        "category": "gear",
+        "image": "img/products/00000030.png"
+    },
+    {
+        "id": "00000031",
+        "name": "High Peak Спальный мешок «Redwood»",
+        "price": 47000,
+        "category": "gear",
+        "image": "img/products/00000031.png"
+    },
+    {
+        "id": "00000032",
+        "name": "SALORRI Рюкзак полиэстер",
+        "price": 4470,
+        "category": "gear",
+        "image": "img/products/00000032.png"
     }
 ]

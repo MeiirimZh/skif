@@ -4,7 +4,7 @@
     <main>
             <div class="main-products">
                 <?php
-                    for ($i = 0; $i < 12; $i++)
+                    for ($i = 0; $i < 20; $i++)
                         require "blocks/product_card.html";
                 ?>
             </div>
