@@ -9,6 +9,28 @@ const products_cards = document.querySelectorAll(".main-products__card");
 let products_carts_btns = Array.from(document.querySelectorAll(".main-products__cart-button"));
 let products_favourites_btns = Array.from(document.querySelectorAll(".main-products__favourite-button"));
 
+function mobile_catalogue() {
+    let nav = document.getElementsByTagName('nav')[0];
+    if (nav.style.display == 'none') {
+        nav.style.display = 'block';
+        nav.style.position = 'absolute';
+        nav.style.zIndex = 1;
+        document.querySelector(".nav-container").style.background = '#FFF';
+    }
+    else {
+        nav.style.display = 'none';
+    }
+}
+
+function mobile_menu() {
+    if (document.querySelector(".header-menu-dropmenu").style.display == 'none') {
+        document.querySelector(".header-menu-dropmenu").style.display = 'block';
+    }
+    else {
+        document.querySelector(".header-menu-dropmenu").style.display = 'none';
+    }
+}
+
 // Check for a search query
 fetch('../json/search_query.json')
     .then(response => response.json())

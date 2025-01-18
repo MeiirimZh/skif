@@ -24,7 +24,27 @@ switch (window.location.href) {
         break;
 }
 
-console.log(category);
+function mobile_catalogue() {
+    let nav = document.getElementsByTagName('nav')[0];
+    if (nav.style.display == 'none') {
+        nav.style.display = 'block';
+        nav.style.position = 'absolute';
+        nav.style.zIndex = 1;
+        document.querySelector(".nav-container").style.background = '#FFF';
+    }
+    else {
+        nav.style.display = 'none';
+    }
+}
+
+function mobile_menu() {
+    if (document.querySelector(".header-menu-dropmenu").style.display == 'none') {
+        document.querySelector(".header-menu-dropmenu").style.display = 'block';
+    }
+    else {
+        document.querySelector(".header-menu-dropmenu").style.display = 'none';
+    }
+}
 
 // Update a cart quantity text and current user
 fetch('../json/users.json')

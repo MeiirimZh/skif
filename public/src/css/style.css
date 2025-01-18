@@ -23,11 +23,15 @@ header {
 }
 
 .non-interactive {
-  pointer-events: none;
+    pointer-events: none;
 }
 
-.header__catalogue {
+.header-catalogue__button {
+    width: 40px;
     margin-right: 40px;
+    background-color: #FFD700;
+    border: none;
+    cursor: pointer;
 }
 
 .header-logo {
@@ -159,6 +163,10 @@ input[type="search"]:focus {
     margin-bottom: 5px;
 }
 
+.header-menu {
+    position: relative;
+}
+
 .header-menu__button {
     display: none;
     cursor: pointer;
@@ -171,6 +179,30 @@ input[type="search"]:focus {
 
 .header-menu__button:hover {
     background-color: #ffe34c;
+}
+
+.header-menu-dropmenu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+}
+
+.header-menu-dropmenu button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #232323;
+    border-radius: 10px;
+    background-color: #FFD700;
+}
+
+.header-menu-dropmenu__img {
+    margin-right: 5px;
+    width: 20px;
+    height: 17px;
 }
 
 .navmain {
@@ -372,11 +404,11 @@ main {
 }
 
 @media (max-width: 1200px) {
-    .header__catalogue {
+    .header-catalogue__button {
         margin-right: 30px;
     }
 
-    .header-logo__img {
+    .header-logo {
         margin-right: 30px;
     }
 
@@ -406,11 +438,11 @@ main {
 }
 
 @media (max-width: 1000px) {
-    .header__catalogue {
+    .header-catalogue__button {
         margin-right: 20px;
     }
 
-    .header-logo__img {
+    .header-logo {
         margin-right: 20px;
     }
 
@@ -478,13 +510,21 @@ main {
 }
 
 @media (max-width: 450px) {
-    .header__catalogue {
+    .header-catalogue__button {
         display: none;
+    }
+
+    .header-logo {
+        margin-right: 10px;
     }
 
     .header-logo__img {
         width: 45px;
         height: 27px;
+    }
+
+    .header-search {
+        margin-right: 10px;
     }
 
     #header-search__input {
@@ -501,7 +541,7 @@ main {
 }
 
 @media (max-width: 360px) {
-    .header__catalogue {
+    .header-catalogue__button {
         display: none;
     }
 

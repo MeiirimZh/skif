@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        <a href="#"><img class="header__catalogue" src="icons/Catalogue.png" alt="catalogue icon"></a>
+        <button class="header-catalogue__button">
+            <img src="icons/Catalogue.png" alt="catalogue icon">
+        </button>
         <button class="header-logo" onclick="header_logo_clicked()">
             <img class="header-logo__img" src="img/Logo.png" alt="logo">
         </button>
@@ -50,9 +52,31 @@
             </section>
         </button>
         <section class="header-menu">
-            <button class="header-menu__button">
-                <img src="icons/Menu.png" alt="">
+            <button class="header-menu__button" onclick="mobile_menu()">
+                <img src="icons/Menu.png" alt="menu icon">
             </button>
+            <section class="header-menu-dropmenu">
+                <button onclick="mobile_catalogue()">
+                    <img class="header-menu-dropmenu__img" src="../icons/Catalogue-No-Text.png" alt="catalogue icon">
+                    <h2>Каталог</h2>
+                </button>
+                <button onclick="window.location.href='cart.php'">
+                    <img class="header-menu-dropmenu__img" src="../icons/Cart.png" alt="cart icon">
+                    <h2>Корзина</h2>
+                </button>
+                <button onclick="window.location.href='favourites.php'">
+                    <img class="header-menu-dropmenu__img" src="../icons/Favourite-Small.png" alt="favourites icon">
+                    <h2>Избранные</h2>
+                </button>
+                <button onclick="window.location.href='user_enter.php'">
+                    <img class="header-menu-dropmenu__img" src="../icons/User.png" alt="profile icon">
+                    <h2>Профиль</h2>
+                </button>
+                <button>
+                    <img class="header-menu-dropmenu__img" src="../icons/Exit.png" alt="exit icon">
+                    <h2>Выйти</h2>
+                </button>
+            </section>
         </section>
     </header>
     

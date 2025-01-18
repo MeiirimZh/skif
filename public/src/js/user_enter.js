@@ -1,3 +1,12 @@
+function mobile_menu() {
+    if (document.querySelector(".header-menu-dropmenu").style.display == 'none') {
+        document.querySelector(".header-menu-dropmenu").style.display = 'block';
+    }
+    else {
+        document.querySelector(".header-menu-dropmenu").style.display = 'none';
+    }
+}
+
 // Update a cart quantity text and current user
 fetch('../json/users.json')
     .then(response => response.json())
