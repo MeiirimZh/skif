@@ -22,6 +22,9 @@ switch (window.location.href) {
     case 'https://skif.local/navigation-and-safety.php':
         category = 'navigation-and-safety';
         break;
+    default:
+        console.error("Неизвестная страница! Попробуйте перезайти на сайт.")
+        break;
 }
 
 function mobile_catalogue() {

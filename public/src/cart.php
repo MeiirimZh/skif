@@ -1,6 +1,9 @@
 <?php
     require_once "blocks/header.html";
 ?>
+<?php
+    require_once "blocks/navmain.html";
+?>
         <main>
             <div class="main-products">
                 <?php
@@ -25,8 +28,6 @@
             <button class="main__confirm_order">Оформить заказ</button>
         </main>
     </div>
-
-    <footer></footer>
 
     <script src="js/cart.js"></script>
 </body>

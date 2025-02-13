@@ -403,6 +403,60 @@ main {
     background-color: #d41932;
 }
 
+footer {
+    width: 100%;
+    height: 180px;
+    background-color: #232323;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+footer ul {
+    margin-bottom: 40px;
+}
+
+footer a {
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: #FFD700;
+}
+
+footer li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+footer h2 {
+    font-family: 'Roboto';
+    font-size: 12px;
+    color: white;
+}
+
+.main-info {
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+.main-info h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-info h2 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-info div {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
 @media (max-width: 1200px) {
     .header-catalogue__button {
         margin-right: 30px;
@@ -556,7 +610,7 @@ main {
     }
 
     #header-search__input {
-        width: 210px;
+        width: 200px;
     }
 
     .main-products {

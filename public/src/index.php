@@ -1,6 +1,9 @@
 <?php
     require_once "blocks/header.html";
 ?>
+<?php
+    require_once "blocks/navmain.html";
+?>
     <main>
             <div class="main-products">
                 <?php
@@ -11,7 +14,9 @@
         </main>
     </div>
 
-    <footer></footer>
+<?php
+    require_once "blocks/footer.html";
+?>
 
     <script src="js/index.js"></script>
 </body>
